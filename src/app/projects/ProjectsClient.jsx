@@ -102,15 +102,12 @@ export default function ProjectsClient() {
 
   // Deep-link: /projects?open=2 or /projects#p-2
   useEffect(() => {
-    // query param
-    const q = search?.get("open");
-    // hash
+    const q = search?.get("open"); // query param
     const hash = typeof window !== "undefined" ? window.location.hash : "";
     const fromHash = hash?.startsWith("#p-") ? Number(hash.slice(3)) : null;
     const wanted = Number(q ?? fromHash);
     if (Number.isFinite(wanted) && projects.some((p) => p.id === wanted && !p.comingSoon)) {
-      // delay to ensure refs are set after first render
-      setTimeout(() => setOpenId(wanted), 0);
+      setTimeout(() => setOpenId(wanted), 0); // wait for refs to mount
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // run once on mount

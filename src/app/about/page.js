@@ -175,7 +175,7 @@ export default function Page() {
   <div className="justify-self-end w-28 sm:w-44 md:w-auto">
     <div className="relative -rotate-2 rounded-3xl border border-white/10 bg-white/5 p-1.5 sm:p-2 shadow-2xl ring-1 ring-white/20">
       {/* Make the image responsive via width of the wrapper */}
-      <img
+      <Image
         src="/avatar.jpg"
         alt="Portrait"
         className="rounded-2xl object-cover w-full max-w-[520px]"
